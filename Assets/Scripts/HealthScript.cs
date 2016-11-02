@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour {
 
-	private int health; //Needs to be set by gameObject attached to
+	public int health;
+	public bool isEnemy;
 
+	public void damage (int damageCount){
+		health -= damageCount;
+		if (health <= 0)
+			Destroy (gameObject);
+	}
 
 	void Start () {
 		
@@ -15,4 +21,6 @@ public class HealthScript : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
 }

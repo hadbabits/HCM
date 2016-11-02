@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212590432222553726}
   - component: {fileID: 50814012772882926}
   - component: {fileID: 61779723476311090}
+  - component: {fileID: 114740434262124420}
   m_Layer: 0
   m_Name: BadGuy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,6 +77,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.49, y: 7.21}
+--- !u!114 &114740434262124420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342572348542342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d383f703b9c694d3d8dd9a45f665af3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  isEnemy: 1
 --- !u!212 &212590432222553726
 SpriteRenderer:
   m_ObjectHideFlags: 1
