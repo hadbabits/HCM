@@ -11,9 +11,11 @@ public class PlayerScript : MonoBehaviour {
 	private Vector2 movement;
 	private Rigidbody2D rb;
 	private bool groundContact;
+	private int health;
 
 	void Start (){
 		groundContact = false;
+		health = 10;
 	}
 
 	void Update () {
@@ -46,6 +48,11 @@ public class PlayerScript : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Ground"))
 			groundContact = true;
+		if (other.gameObject.CompareTag ("Enemy")) { //First imp. of health. Will need to work on invicibility frames next
+			health--;
+			print (health);
+		}
+			
 
 	}
 
