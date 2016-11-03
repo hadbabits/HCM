@@ -4,32 +4,43 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour {
 
+	private bool damagable; //Is the character out of invunerability frames?
+	private float damageT; //when char. takes damage
+
 	public int health;
 	public bool isEnemy;
+	private float damageRate; // How often can char. get hurt?
 
 	public void damage (int damageCount){
 		health -= damageCount;
+		damageT = Time.time;
+		damagable = false;
 		if (health <= 0)
 			Destroy (gameObject);
 	}
 
 	void Start () {
-		
+		damagable = true; 
+		damageT = 0f;
+		damageRate = 1;
 	}
 
 
 	void Update () {
-		
+		if (Time.time > damageT + damageRate) 
+			damagable = true;
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
-		if (col.gameObject.CompareTag ("Enemy") && !isEnemy) {
-			damage (1);
-			Debug.Log ("Player " + health);
-		}
-		if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
-			damage (1);
-			Debug.Log ("Enemy " + health);
+		if (damagable) {
+			if (col.gameObject.CompareTag ("Enemy") && !isEnemy) {
+				damage (1);
+				Debug.Log ("Player " + health);
+			}
+			if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
+				damage (1);
+				Debug.Log ("Enemy " + health);
+			}
 		}
 	}
 
