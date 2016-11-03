@@ -6,10 +6,14 @@ public class HealthScript : MonoBehaviour {
 
 	private bool damagable; //Is the character out of invunerability frames?
 	private float damageT; //when char. takes damage
+	private SpriteRenderer spriteR; 
+	private float damageRate; // How often can char. get hurt
 
 	public int health;
 	public bool isEnemy;
-	private float damageRate; // How often can char. get hurt?
+	public Sprite spriteOrig;
+	public Sprite spriteDamage;
+
 
 	public void damage (int damageCount){
 		health -= damageCount;
@@ -17,9 +21,12 @@ public class HealthScript : MonoBehaviour {
 		damagable = false;
 		if (health <= 0)
 			Destroy (gameObject);
+
+		spriteR.sprite = spriteDamage; 
 	}
 
 	void Start () {
+		spriteR = GetComponent<SpriteRenderer> ();
 		damagable = true; 
 		damageT = 0f;
 		damageRate = 1;
@@ -27,8 +34,9 @@ public class HealthScript : MonoBehaviour {
 
 
 	void Update () {
-		if (Time.time > damageT + damageRate) 
+		if (Time.time > damageT + damageRate) {
 			damagable = true;
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D col){

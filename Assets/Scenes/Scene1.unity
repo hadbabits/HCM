@@ -774,6 +774,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   isEnemy: 0
+  spriteOrig: {fileID: 21300000, guid: 10418bf96411f4fe0970e9bc2bfd30ae, type: 3}
+  spriteDamage: {fileID: 21300000, guid: 51282a3f17b6949ae8e7a6675558133f, type: 3}
 --- !u!1 &1441260818
 GameObject:
   m_ObjectHideFlags: 0
