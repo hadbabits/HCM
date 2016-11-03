@@ -19,7 +19,7 @@ public class EnemyAiScript : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		Vector2 velocity = new Vector2 ((transform.position.x - player.transform.position.x) * speed, 0);
+		Vector2 velocity = new Vector2 ((transform.position.x - player.transform.position.x) * speed, 6);
 		enemyRb.velocity = -velocity;
 	}
 }
