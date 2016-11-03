@@ -36,6 +36,7 @@ public class HealthScript : MonoBehaviour {
 	void Update () {
 		if (Time.time > damageT + damageRate) {
 			damagable = true;
+			spriteR.sprite = spriteOrig; 
 		}
 	}
 

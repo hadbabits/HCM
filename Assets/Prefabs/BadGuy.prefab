@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50814012772882926}
   - component: {fileID: 61779723476311090}
   - component: {fileID: 114740434262124420}
+  - component: {fileID: 114479610462740336}
   m_Layer: 0
   m_Name: BadGuy
   m_TagString: Enemy
@@ -77,6 +78,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.49, y: 7.21}
+--- !u!114 &114479610462740336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1342572348542342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bdf4d058e014dbb9494040806803eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1778726653022942, guid: 74d807c3cf4ad421d88ce63417cf7cfe, type: 2}
 --- !u!114 &114740434262124420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   isEnemy: 1
+  spriteOrig: {fileID: 21300000, guid: 3755144e93ab34af9a416e599511e64b, type: 3}
+  spriteDamage: {fileID: 21300002, guid: 3755144e93ab34af9a416e599511e64b, type: 3}
 --- !u!212 &212590432222553726
 SpriteRenderer:
   m_ObjectHideFlags: 1
