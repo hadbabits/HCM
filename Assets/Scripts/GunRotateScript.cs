@@ -27,10 +27,6 @@ public class GunRotateScript : MonoBehaviour {
 		mousePos.y = mousePos.y - objectPos.y;
 		gunAngle = Mathf.Atan2 (mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0, 0, gunAngle);
-		if (Input.GetMouseButtonDown (0))
-			Debug.Log ("angle " + gunAngle);
-
-
 		
 	}
 }

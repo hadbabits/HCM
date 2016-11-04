@@ -67,7 +67,6 @@ public class GunFireScript : MonoBehaviour {
 			chargeInitT = Time.time;
 		if (Input.GetMouseButtonUp (0)) {
 			charge = Mathf.Clamp(((Time.time - chargeInitT) * chargeRate) + initCharge, 0, maxCharge); 
-			Debug.Log (charge);
 			Fire (charge);
 		}
 

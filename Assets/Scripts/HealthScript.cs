@@ -40,15 +40,13 @@ public class HealthScript : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D (Collision2D col){
+	void OnCollisionStay2D (Collision2D col){
 		if (damagable) {
 			if (col.gameObject.CompareTag ("Enemy") && !isEnemy) {
 				damage (1);
-				Debug.Log ("Player " + health);
 			}
 			if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
 				damage (1);
-				Debug.Log ("Enemy " + health);
 			}
 		}
 	}
