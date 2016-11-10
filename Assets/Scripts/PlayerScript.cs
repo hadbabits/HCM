@@ -11,13 +11,14 @@ public class PlayerScript : MonoBehaviour {
 	private Vector2 movement;
 	private Rigidbody2D rb;
 	private bool groundContact;
+	private Animator anim;
 
 	void Start (){
 		groundContact = false;
+		anim = GetComponent<Animator> (); //not yet used
 	}
 
 	void Update () {
-
 
 		
 	}
