@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour {
 
 		rb.velocity = movement;
 
-		if (Input.GetKeyDown (KeyCode.Space) && groundContact)
+		if (Input.GetKeyDown (KeyCode.Space) && groundContact) //Probably need to add jump rate to fix super jump problem
 			rb.AddForce (Vector2.up * (jump * jumpMultiplier), ForceMode2D.Force); 
 	}
 

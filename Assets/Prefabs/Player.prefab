@@ -171,6 +171,7 @@ MonoBehaviour:
   chargeRate: 15
   maxCharge: 40
   initCharge: 10
+  weaponType: shotgun
 --- !u!114 &114846903163271360
 MonoBehaviour:
   m_ObjectHideFlags: 1
