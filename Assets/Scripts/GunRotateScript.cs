@@ -18,7 +18,7 @@ public class GunRotateScript : MonoBehaviour {
 	}
 
 
-	void Update () {
+	void FixedUpdate () {
 
 		mousePos = Input.mousePosition;
 		mousePos.z = 5.23f;

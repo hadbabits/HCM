@@ -19,7 +19,6 @@ public class GunFireScript : MonoBehaviour {
 	public float chargeRate;
 	public float maxCharge;
 	public float initCharge;
-	public Quaternion rotation = Quaternion.identity;
 
 
 
@@ -31,17 +30,16 @@ public class GunFireScript : MonoBehaviour {
 	}
 
 	void Fire (float charge){
-		if (Time.time > lastShot + fireRate) {									//Just shoots 2 bullets at once with the same trajectory. Need to learn how to very for shotgun spread.
+		if (Time.time > lastShot + fireRate) {								
 			Transform bullet1 = Instantiate (weaponPrefab, newPos, 
 				                  transform.rotation) as Transform;
 			weaponrb = bullet1.GetComponent<Rigidbody2D> ();
-			weaponrb.AddForce ((bullet1.transform.right * charge) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
-
+			weaponrb.AddForce ((transform.right * charge) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
 			Transform bullet2 = Instantiate (weaponPrefab, newPos, 
-				rotation * rotation) as Transform;
+				transform.rotation) as Transform;
 			weaponrb = bullet2.GetComponent<Rigidbody2D> ();
-			weaponrb.AddForce ((bullet2.transform.right * charge) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
-			lastShot = Time.time;
+			//remember this Angle Axis trick for shotguns
+			weaponrb.AddForce (Quaternion.AngleAxis(30, Vector3.forward) * (transform.right * charge) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse); 
 		}
 	} 
 	void Update () {
@@ -74,8 +72,7 @@ public class GunFireScript : MonoBehaviour {
 			charge = Mathf.Clamp(((Time.time - chargeInitT) * chargeRate) + initCharge, 0, maxCharge); 
 			Fire (charge);
 		}
-			
-		rotation.x = transform.rotation.x + 90;
+
 	}
 
 

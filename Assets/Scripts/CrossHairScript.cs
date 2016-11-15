@@ -16,7 +16,7 @@ public class CrossHairScript : MonoBehaviour {
 
 	}
 
-	void Update () {
+	void FixedUpdate () {
 
 		mousePos = Input.mousePosition;
 		mousePos.z = initialZ;
