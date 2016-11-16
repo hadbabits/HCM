@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour {
+public class TreasureShotScript : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private GameObject player;
@@ -16,7 +16,7 @@ public class BulletScript : MonoBehaviour {
 
 		Destroy (this.gameObject, 5);
 	}
-	
+
 	void fixedUpdate () {
 	}
 
@@ -24,6 +24,9 @@ public class BulletScript : MonoBehaviour {
 		if (col.gameObject.CompareTag ("Projectile"))
 			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
 				GetComponent<Collider2D> ());
-	}
+		rb.gravityScale = 1;		//Doesn't work yet
 
+
+		
+	}
 }
