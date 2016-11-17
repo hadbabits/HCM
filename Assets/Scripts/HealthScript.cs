@@ -8,6 +8,7 @@ public class HealthScript : MonoBehaviour {
 	private float damageT; //when char. takes damage
 	private SpriteRenderer spriteR; 
 	private float damageRate; // How often can char. get hurt
+	private bool damaging;
 
 	public int health;
 	public bool isEnemy;
@@ -18,7 +19,8 @@ public class HealthScript : MonoBehaviour {
 	public void damage (int damageCount){
 		health -= damageCount;
 		damageT = Time.time;
-		damagable = false;
+		if (!isEnemy)
+			damagable = false;
 		if (health <= 0)
 			Destroy (gameObject);
 
@@ -40,15 +42,17 @@ public class HealthScript : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionStay2D (Collision2D col){
+	void OnCollisionEnter2D (Collision2D col){
 		if (damagable) {
 			if (col.gameObject.CompareTag ("Enemy") && !isEnemy) {
 				damage (1);
 			}
 			if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
-				damage (1);
+				if (damaging)
+					damage (1);
 			}
 		}
+
 	}
 
 

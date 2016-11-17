@@ -6,6 +6,10 @@ public class BulletScript : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private GameObject player;
+	private float initT;
+
+	public static bool damaging;
+	public int weaponType; // 0 = ball shot, 1 = shotgun
 
 
 	void Start () { 
@@ -13,6 +17,8 @@ public class BulletScript : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		Physics2D.IgnoreCollision (player.GetComponent<Collider2D> (),
 			GetComponent<Collider2D> ());
+
+		damaging = true;
 
 		Destroy (this.gameObject, 5);
 	}
@@ -24,6 +30,24 @@ public class BulletScript : MonoBehaviour {
 		if (col.gameObject.CompareTag ("Projectile"))
 			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
 				GetComponent<Collider2D> ());
+		if (weaponType == 1) {
+			if (!col.gameObject.CompareTag ("Projectile")) {
+				rb.gravityScale = 10f;
+				rb.mass = 10f;
+			}
+		}
+
+		if (col.gameObject.CompareTag ("Enemy")) 
+			initT = Time.time;
+	}
+
+	void OnCollisionStay2D (Collision2D col){
+
+		if (Time.time > initT + 0.2) {
+			Debug.Log ("True");
+			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
+				GetComponent<Collider2D> ());
+		}
 	}
 
 }
