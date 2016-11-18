@@ -51,7 +51,7 @@ public class GunFireScript : MonoBehaviour {
 			Transform bullet1 = Instantiate (Gemerator(), newPos, 
 				transform.rotation) as Transform;
 			weaponrb = bullet1.GetComponent<Rigidbody2D> ();
-			weaponrb.AddForce ((transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
+			weaponrb.AddForce (Quaternion.AngleAxis(bulletStray(), Vector3.forward) * (transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
 			Transform bullet2 = Instantiate (Gemerator(), newPos, 
 				transform.rotation) as Transform;
 			weaponrb = bullet2.GetComponent<Rigidbody2D> ();
