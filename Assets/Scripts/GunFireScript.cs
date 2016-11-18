@@ -16,6 +16,7 @@ public class GunFireScript : MonoBehaviour {
 
 	public Transform ballPrefab;
 	public Transform shotGPrefab;
+	public Transform gemPrefab;
 	public float fireRate;
 	public float chargeRate;
 	public float maxCharge;
@@ -47,22 +48,36 @@ public class GunFireScript : MonoBehaviour {
 	void ShotgunFire (){
 	
 		if (Time.time > lastShot + fireRate) {								
-			Transform bullet1 = Instantiate (shotGPrefab, newPos, 
+			Transform bullet1 = Instantiate (Gemerator(), newPos, 
 				transform.rotation) as Transform;
 			weaponrb = bullet1.GetComponent<Rigidbody2D> ();
 			weaponrb.AddForce ((transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse);
-			Transform bullet2 = Instantiate (shotGPrefab, newPos, 
+			Transform bullet2 = Instantiate (Gemerator(), newPos, 
 				transform.rotation) as Transform;
 			weaponrb = bullet2.GetComponent<Rigidbody2D> ();
 			//remember this Angle Axis trick for shotguns
-			weaponrb.AddForce (Quaternion.AngleAxis(15, Vector3.forward) * (transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse); 
-			Transform bullet3 = Instantiate (shotGPrefab, newPos, 
+			weaponrb.AddForce (Quaternion.AngleAxis(bulletStray(), Vector3.forward) * (transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse); 
+			Transform bullet3 = Instantiate (Gemerator(), newPos, 
 				transform.rotation) as Transform;
 			weaponrb = bullet3.GetComponent<Rigidbody2D> ();
 			//remember this Angle Axis trick for shotguns
-			weaponrb.AddForce (Quaternion.AngleAxis(-15, Vector3.forward) * (transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse); 
-
+			weaponrb.AddForce (Quaternion.AngleAxis(-bulletStray(), Vector3.forward) * (transform.right * shotBlast) + new Vector3 (playerPush, 0f, 0f), ForceMode2D.Impulse); 
 			}
+	} 
+
+	Transform Gemerator () {
+		if (Random.value > 0.95f)
+			return gemPrefab; 
+		else
+			return shotGPrefab;
+	}
+		
+	float bulletStray (){
+	
+		float degree = Random.value * 20f; 
+		Debug.Log (degree);
+		return degree;
+
 	}
 
 

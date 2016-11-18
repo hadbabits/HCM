@@ -37,14 +37,15 @@ public class BulletScript : MonoBehaviour {
 			}
 		}
 
-		if (col.gameObject.CompareTag ("Enemy")) 
+		if (col.gameObject.CompareTag ("Enemy")) {
+			damaging = false;
 			initT = Time.time;
+		}
 	}
 
 	void OnCollisionStay2D (Collision2D col){
 
-		if (Time.time > initT + 0.2) {
-			Debug.Log ("True");
+		if (Time.time > initT + 0.1 && col.gameObject.CompareTag ("Enemy")) {
 			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
 				GetComponent<Collider2D> ());
 		}
