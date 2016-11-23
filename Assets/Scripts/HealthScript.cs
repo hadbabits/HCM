@@ -9,7 +9,6 @@ public class HealthScript : MonoBehaviour {
 	private SpriteRenderer spriteR; 
 	private float damageRate; // How often can char. get hurt
 	private bool damaging;
-	private bool dam2;
 
 	public int health;
 	public bool isEnemy;
@@ -46,14 +45,17 @@ public class HealthScript : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col){
 
-		damaging = col.gameObject.GetComponent <BulletScript>();
+		BulletScript bulletScript = col.gameObject.GetComponent <BulletScript>();
+		damaging = BulletScript.damaging;
 		if (damagable) {
 			if (col.gameObject.CompareTag ("Enemy") && !isEnemy) {
 				damage (1);
 			}
 			if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
-				if (damaging)
+				if (damaging) {
 					damage (1);
+					Debug.Log ("Damaging " + damaging);
+				}
 			}
 		}
 

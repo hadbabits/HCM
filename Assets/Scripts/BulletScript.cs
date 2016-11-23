@@ -37,7 +37,7 @@ public class BulletScript : MonoBehaviour {
 			}
 		}
 
-		if (col.gameObject.CompareTag ("Enemy")) {
+		if (col.gameObject.CompareTag ("Enemy") || col.gameObject.CompareTag ("Ground")) {
 			damaging = false;
 			initT = Time.time;
 		}
