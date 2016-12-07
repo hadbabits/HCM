@@ -420,7 +420,7 @@ Prefab:
     - target: {fileID: 114539643683839670, guid: 74d807c3cf4ad421d88ce63417cf7cfe,
         type: 2}
       propertyPath: shotBlast
-      value: 60
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 114539643683839670, guid: 74d807c3cf4ad421d88ce63417cf7cfe,
         type: 2}
