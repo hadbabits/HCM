@@ -54,7 +54,6 @@ public class HealthScript : MonoBehaviour {
 			if (col.gameObject.CompareTag ("Projectile") && isEnemy) {
 				if (damaging) {
 					damage (1);
-					Debug.Log ("Damaging " + damaging);
 				}
 			}
 		}

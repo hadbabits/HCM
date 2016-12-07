@@ -6,7 +6,8 @@ public class BulletScript : MonoBehaviour {
 
 	private Rigidbody2D rb;
 	private GameObject player;
-	private float initT;
+	private float initHit; // init time shot hits enemy or ground
+	private float initFire; //initial time shot is fired
 
 	public static bool damaging;
 	public int weaponType; // 0 = ball shot, 1 = shotgun
@@ -20,6 +21,8 @@ public class BulletScript : MonoBehaviour {
 
 		damaging = true;
 
+		initFire = Time.time;
+
 		Destroy (this.gameObject, 5);
 	}
 	
@@ -27,25 +30,18 @@ public class BulletScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col){
-		if (col.gameObject.CompareTag ("Projectile"))
+		if (col.gameObject.CompareTag ("Projectile") && Time.time > initFire + 0.4) //Ignore's collision between projectiles after a certain time after firing, probably needs tweaking.
 			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
 				GetComponent<Collider2D> ());
-		if (weaponType == 1) {
-			if (!col.gameObject.CompareTag ("Projectile")) {
-				rb.gravityScale = 10f;
-				rb.mass = 10f;
-			}
-		}
-
-		if (col.gameObject.CompareTag ("Enemy") || col.gameObject.CompareTag ("Ground")) {
+		if (col.gameObject.CompareTag ("Enemy") || col.gameObject.CompareTag ("Ground")) {  // Proj.s won't do damage if they've already hit the enemy or ground
 			damaging = false;
-			initT = Time.time;
+			initHit = Time.time;
 		}
 	}
 
 	void OnCollisionStay2D (Collision2D col){
 
-		if (Time.time > initT + 0.1 && col.gameObject.CompareTag ("Enemy")) {
+		if (Time.time > initHit + 0.1 && col.gameObject.CompareTag ("Enemy")) {
 			Physics2D.IgnoreCollision (col.gameObject.GetComponent<Collider2D> (),
 				GetComponent<Collider2D> ());
 		}

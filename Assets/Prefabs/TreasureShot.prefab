@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4820151040366774}
   - component: {fileID: 212500326493431044}
   - component: {fileID: 50807770156981634}
-  - component: {fileID: 58238058889597990}
+  - component: {fileID: 70925340744397660}
   - component: {fileID: 114618053817645176}
   m_Layer: 8
   m_Name: TreasureShot
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352486559601568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.11, y: -1.96, z: 0}
+  m_LocalPosition: {x: -0.10522612, y: 0.09057097, z: 0}
   m_LocalScale: {x: 0.12, y: 0.12, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,17 +54,17 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 1
   m_AngularDrag: 1
-  m_GravityScale: 0
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58238058889597990
-CircleCollider2D:
+--- !u!70 &70925340744397660
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,8 +75,8 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 2.48
+  m_Size: {x: 4.41, y: 2.05}
+  m_Direction: 1
 --- !u!114 &114618053817645176
 MonoBehaviour:
   m_ObjectHideFlags: 1

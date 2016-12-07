@@ -33,7 +33,6 @@ public class EnemyAiScript : MonoBehaviour {
 
 		Vector2 velocity = new Vector2 (Mathf.Clamp ((playerDist * speed),-maxSpeed,maxSpeed) + 2, 6); // the + 2 keeps the enemy from stopping when it reaches the player
 		enemyRb.velocity = -velocity;
-		Debug.Log (enemyRb.velocity);
 
 	}
 }

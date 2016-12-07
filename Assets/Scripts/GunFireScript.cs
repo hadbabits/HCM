@@ -74,8 +74,7 @@ public class GunFireScript : MonoBehaviour {
 		
 	float bulletStray (){
 	
-		float degree = Random.value * 20f; 
-		Debug.Log (degree);
+		float degree = Random.value * 15f; 
 		return degree;
 
 	}
