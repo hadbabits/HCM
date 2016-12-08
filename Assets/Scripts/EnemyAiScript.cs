@@ -28,6 +28,14 @@ public class EnemyAiScript : MonoBehaviour {
 	void FixedUpdate () {
 		playerDist = transform.position.x - player.transform.position.x; 
 
+		if (Mathf.Abs (playerDist) < 2) { //Working on a sword swing :Y
+			Debug.Log ("close");
+			swordRb.rotation -= 20;
+			swordRb.rotation = Mathf.Clamp (swordRb.rotation, -40, 40);
+			if (swordRb.rotation == -40)
+				Debug.Log ("full swing");
+		}
+
 		if (playerDist < 0) { 			//Flips the enemy sprites to follow player
 			enemySprite.flipX = true;
 			swordSprite.flipX = false;  //note to self: Next time make sure sprites are facing the right way when importing XP
@@ -36,10 +44,7 @@ public class EnemyAiScript : MonoBehaviour {
 			swordSprite.flipX = true;
 		}
 
-		if (Mathf.Abs (playerDist) < 2) {
-			Debug.Log ("close");
-			swordRb.AddTorque (5);
-		}
+
 
 
 		Vector2 velocity = new Vector2 (Mathf.Clamp ((playerDist * speed),-maxSpeed,maxSpeed) + 2, 6); // the + 2 keeps the enemy from stopping when it reaches the player
