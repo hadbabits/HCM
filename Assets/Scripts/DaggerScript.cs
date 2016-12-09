@@ -17,7 +17,6 @@ public class DaggerScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButton (1)) {
 			Debug.Log ("Dag!");
-			daggerRb.position.x += 50;
 		}
 	}
 }
