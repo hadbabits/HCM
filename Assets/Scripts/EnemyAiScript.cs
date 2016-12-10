@@ -32,6 +32,9 @@ public class EnemyAiScript : MonoBehaviour {
 
 		if (Mathf.Abs (playerDist) < 2) { //Working on a sword swing :Y
 			Debug.Log ("close");
+			swordAnim.SetInteger ("State", 1);
+		} else {
+			swordAnim.SetInteger ("State", 0);
 		}
 
 		if (playerDist < 0) { 			//Flips the enemy sprites to follow player
