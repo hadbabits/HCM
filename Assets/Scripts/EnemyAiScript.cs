@@ -9,6 +9,7 @@ public class EnemyAiScript : MonoBehaviour {
 	private Rigidbody2D swordRb;
 	private SpriteRenderer enemySprite;
 	private SpriteRenderer swordSprite;
+	private Animator swordAnim;
 	private float playerDist; // Distance between player and enemy; using to determine direction enemy should face
 
 	public float speed;
@@ -20,6 +21,7 @@ public class EnemyAiScript : MonoBehaviour {
 		swordRb = transform.GetChild (0).GetComponent<Rigidbody2D> ();
 		enemySprite = GetComponent<SpriteRenderer> ();
 		swordSprite = transform.GetChild (0).GetComponent<SpriteRenderer> ();
+		swordAnim = transform.GetChild (0).GetComponent<Animator> ();
 	}
 
 	void Update () {
@@ -30,10 +32,6 @@ public class EnemyAiScript : MonoBehaviour {
 
 		if (Mathf.Abs (playerDist) < 2) { //Working on a sword swing :Y
 			Debug.Log ("close");
-			swordRb.rotation -= 20;
-			swordRb.rotation = Mathf.Clamp (swordRb.rotation, -40, 40);
-			if (swordRb.rotation == -40)
-				Debug.Log ("full swing");
 		}
 
 		if (playerDist < 0) { 			//Flips the enemy sprites to follow player
