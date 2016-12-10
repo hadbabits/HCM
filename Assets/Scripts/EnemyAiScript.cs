@@ -38,10 +38,10 @@ public class EnemyAiScript : MonoBehaviour {
 
 		if (playerDist < 0) { 			//Flips the enemy sprites to follow player
 			enemySprite.flipX = true;
-			swordSprite.flipX = false;  //note to self: Next time make sure sprites are facing the right way when importing XP
+			swordSprite.flipX = true;  //note to self: Next time make sure sprites are facing the right way when importing XP
 		} else {
 			enemySprite.flipX = false;
-			swordSprite.flipX = true;
+			swordSprite.flipX = false;
 		}
 
 
