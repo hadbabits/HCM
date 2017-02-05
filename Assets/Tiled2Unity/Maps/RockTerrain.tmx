@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="RockTexture" tilewidth="16" tileheight="16" tilecount="40" columns="8">
+  <image source="../../../../../Pictures/RockTexture.png" width="128" height="80"/>
+  <terraintypes>
+   <terrain name="Rock" tile="0"/>
+  </terraintypes>
+  <tile id="0" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="15.9992" y="15.9974">
+     <polygon points="0.000753012,0.00256148 0.000753012,-15.9974 -15.9992,0.00256148"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="1" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="2" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="2" x="0.00178571" y="15.8132">
+     <polygon points="-0.00178571,0.186753 -0.00178571,-15.8132 15.9982,0.186753"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="8" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="9" terrain="0,0,0,0"/>
+  <tile id="10" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="10" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="12">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="16">
+     <polygon points="0,0 16,-16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="13">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,16 0,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="16" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="2" x="0" y="0">
+     <polygon points="0,0 16,0 16,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="17" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="18" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,0 0,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="19">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="16">
+     <polygon points="0,0 16,-16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="20" terrain=",0,0,0"/>
+  <tile id="21" terrain="0,,0,0"/>
+  <tile id="22">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,16 0,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="27">
+   <objectgroup draworder="index">
+    <object id="3" x="0" y="0">
+     <polygon points="0,0 16,16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="28" terrain="0,0,,0"/>
+  <tile id="29" terrain="0,0,0,"/>
+  <tile id="30">
+   <objectgroup draworder="index">
+    <object id="1" x="16" y="0">
+     <polygon points="0,0 -16,16 -16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="36">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+     <polygon points="0,0 16,16 16,0"/>
+    </object>
+   </objectgroup>
+  </tile>
+  <tile id="37">
+   <objectgroup draworder="index">
+    <object id="1" x="16" y="0">
+     <polygon points="0,0 -16,0 -16,16"/>
+    </object>
+   </objectgroup>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="20" height="20">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+1,2,2,3,0,0,13,2,2,3,0,0,0,0,0,0,0,0,0,0,
+9,10,10,22,2,2,21,30,29,22,3,0,0,1,2,2,2,2,2,3,
+17,18,18,18,18,29,30,19,17,29,22,3,0,17,18,18,18,18,18,19,
+0,0,0,0,0,9,22,3,1,21,10,11,0,0,0,0,0,0,0,0,
+0,0,0,0,0,9,10,22,21,30,18,19,0,0,0,0,0,0,0,0,
+0,0,0,0,0,17,18,18,29,11,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,9,11,0,0,0,0,0,1,2,3,0,0,
+0,0,0,0,0,0,0,0,9,22,2,2,2,2,2,21,10,11,0,0,
+0,0,0,0,0,0,0,0,17,18,18,18,18,18,18,18,18,19,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
