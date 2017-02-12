@@ -6,16 +6,17 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	public float jump;
-	public float jumpMultiplier;
 
 	private Vector2 movement;
 	private Rigidbody2D rb;
 	private bool groundContact;
 	private Animator anim;
+	private float initJumpT; //initial jump time
 
 	void Start (){
 		groundContact = false;
 		anim = GetComponent<Animator> (); //not yet used
+		initJumpT = Time.time;
 	}
 
 	void Update () {
@@ -27,6 +28,7 @@ public class PlayerScript : MonoBehaviour {
 	{
 		if (rb == null)
 			rb = GetComponent<Rigidbody2D> ();
+
 
 		float inputX = Input.GetAxis ("Horizontal");
 
@@ -40,8 +42,11 @@ public class PlayerScript : MonoBehaviour {
 		rb.velocity = movement;
 
 		if (Input.GetKeyDown (KeyCode.Space) && groundContact) { //Probably need to add jump rate to fix super jump problem
-			groundContact = false;
-			rb.AddForce (Vector2.up * (jump * jumpMultiplier), ForceMode2D.Force); 
+			if (Time.time > initJumpT + 0.5f) {
+				initJumpT = Time.time;
+				groundContact = false;
+				rb.AddForce (Vector2.up * (jump * 100), ForceMode2D.Force); 
+			}		
 		}
 	}
 
