@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
 
+	public GameObject player;
+
 	private Transform tf;
 	private Vector3 bounds;
 	private Vector3 playerPos;
-	private GameObject player;
+
 
 	public float xMin, xMax, yMin, yMax;
 
@@ -17,7 +19,6 @@ public class CameraScript : MonoBehaviour {
 	void Start () {
 
 		tf = GetComponent<Transform> ();
-		player = GameObject.Find ("Player");
 
 	}
 	
