@@ -9,25 +9,36 @@ public class PlayerScript : MonoBehaviour {
 
 	private Vector2 movement;
 	private Rigidbody2D rb;
-	private bool groundContact;
+	private SpriteRenderer sprite;
 	private Animator anim;
+	private bool groundContact;
 	private float initJumpT; //initial jump time
 
 	void Start (){
 		groundContact = false;
+
+
 		anim = GetComponent<Animator> (); //not yet used
 		initJumpT = Time.time;
+
+		if (rb == null)
+			rb = GetComponent<Rigidbody2D> ();
+		if (sprite == null)
+			sprite = GetComponent<SpriteRenderer> ();
+
 	}
 
 	void Update () {
-
+		if (Input.GetKey ("left"))
+			sprite.flipX = true;
+		if (Input.GetKey ("right"))
+			sprite.flipX = false;
 		
 	}
 
 	void FixedUpdate()
 	{
-		if (rb == null)
-			rb = GetComponent<Rigidbody2D> ();
+
 
 
 		float inputX = Input.GetAxis ("Horizontal");
@@ -48,6 +59,7 @@ public class PlayerScript : MonoBehaviour {
 				rb.AddForce (Vector2.up * (jump * 100), ForceMode2D.Force); 
 			}		
 		}
+			
 	}
 
 	void OnCollisionStay2D (Collision2D other)
