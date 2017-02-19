@@ -6,10 +6,11 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	public float jump;
+	public float flipped; //is sprite flipped
 
 	private Vector2 movement;
 	private Rigidbody2D rb;
-	private SpriteRenderer sprite;
+	private Transform tf;
 	private Animator anim;
 	private bool groundContact;
 	private float initJumpT; //initial jump time
@@ -23,17 +24,25 @@ public class PlayerScript : MonoBehaviour {
 
 		if (rb == null)
 			rb = GetComponent<Rigidbody2D> ();
-		if (sprite == null)
-			sprite = GetComponent<SpriteRenderer> ();
+
+		if (tf == null)
+			tf = GetComponent<Transform> ();
+
+		flipped = 1;
 
 	}
 
 	void Update () {
-		if (Input.GetKey ("left"))
-			sprite.flipX = true;
-		if (Input.GetKey ("right"))
-			sprite.flipX = false;
-		
+		if (Input.GetKey ("left") || Input.GetKey (KeyCode.A)) {
+			flipped = -1;
+			tf.localScale = new Vector3 (-60, tf.localScale.y, tf.localScale.z);
+		}
+		if (Input.GetKey ("right") || Input.GetKey (KeyCode.D)) {
+			flipped = 1;
+			tf.localScale = new Vector3 (60, tf.localScale.y, tf.localScale.z);
+		}
+
+
 	}
 
 	void FixedUpdate()

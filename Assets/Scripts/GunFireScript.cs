@@ -6,21 +6,23 @@ public class GunFireScript : MonoBehaviour {
 
 
 	private Rigidbody2D weaponrb;
-	private Rigidbody2D playerrb;
 	private GameObject player;
+	private PlayerScript pScript;
 	private float lastShot;
 	private Vector3 newPos;
 
 	public Transform shotPrefab;
 	public float fireRate;
 	public float firePower;
+	public float flipped; //from playerscript 
 
 
 	void Start () {
 		player = GameObject.Find ("Player");
-		playerrb = player.GetComponent<Rigidbody2D> ();
-
+		pScript = player.GetComponent <PlayerScript> ();
+			
 		lastShot = 0;
+
 	}
 
 	void BallFire (){
@@ -28,7 +30,7 @@ public class GunFireScript : MonoBehaviour {
 			Transform bullet = Instantiate (shotPrefab, newPos, 
 				                  transform.rotation) as Transform;
 			weaponrb = bullet.GetComponent<Rigidbody2D> ();
-			weaponrb.AddForce ((transform.right * firePower) + new Vector3 (1, 0f, 0f), ForceMode2D.Impulse);
+			weaponrb.AddForce ((flipped * transform.right * firePower) + new Vector3 (1, 0f, 0f), ForceMode2D.Impulse);
 
 			lastShot = Time.time;
 		}
@@ -41,9 +43,10 @@ public class GunFireScript : MonoBehaviour {
 		newPos = transform.position;
 
 
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0)) 
 			BallFire ();
-		}
+			
+		flipped = pScript.flipped;
 
 	}
 
