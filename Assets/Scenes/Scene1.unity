@@ -411,6 +411,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1981974906934648, guid: ab448dfb3faef402ca4e7cb45632d037, type: 2}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ab448dfb3faef402ca4e7cb45632d037, type: 2}
   m_IsPrefabParent: 0
@@ -549,6 +553,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 4610666672809058, guid: 13f73baced7664bdeb2970617cb04f53, type: 2}
   fireRate: 1
   firePower: 100
+  flipped: 0
 --- !u!1 &1928105035
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   jump: 500
+  flipped: 0
 --- !u!212 &1928105037
 SpriteRenderer:
   m_ObjectHideFlags: 0

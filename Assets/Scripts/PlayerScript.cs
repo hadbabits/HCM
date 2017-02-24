@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	public float jump;
-	public float flipped; //is sprite flipped
+	public float flipped; //is sprite flipped (public for other script access)
 
 	private Vector2 movement;
 	private Rigidbody2D rb;
@@ -61,7 +61,7 @@ public class PlayerScript : MonoBehaviour {
 
 		rb.velocity = movement;
 
-		if (Input.GetKeyDown (KeyCode.Space) && groundContact) { //Probably need to add jump rate to fix super jump problem
+		if (Input.GetKeyDown (KeyCode.Space) && groundContact) {
 			if (Time.time > initJumpT + 0.5f) {
 				initJumpT = Time.time;
 				groundContact = false;
