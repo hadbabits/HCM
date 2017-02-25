@@ -71,7 +71,7 @@ public class PlayerScript : MonoBehaviour {
 			
 	}
 
-	void OnCollisionStay2D (Collision2D other)
+	void OnTriggerStay2D (Collider2D other)
 	{
 		if (other.gameObject.CompareTag("Ground"))
 			groundContact = true;
@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviour {
 
 	}
 
-	void OnCollisionExit2D(Collision2D other) 
+	void OnTriggerExit2D(Collider2D other) 
 	{
 		if (other.gameObject.CompareTag ("Ground"))
 			groundContact = false;

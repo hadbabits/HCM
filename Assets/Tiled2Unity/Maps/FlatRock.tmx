@@ -1,42 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" nextobjectid="1">
  <tileset firstgid="1" name="RockTexture" tilewidth="16" tileheight="16" tilecount="40" columns="8">
-  <image source="../../Textures/RockTexture.png" width="128" height="80"/>
+  <image source="../Textures/RockTexture.png" width="128" height="80"/>
   <terraintypes>
    <terrain name="FlatRock" tile="1"/>
   </terraintypes>
-  <tile id="1" terrain="0,0,,"/>
-  <tile id="6" terrain="0,,,"/>
-  <tile id="7" terrain=",0,,"/>
-  <tile id="8" terrain="0,,0,"/>
-  <tile id="9" terrain="0,0,0,0"/>
-  <tile id="10" terrain=",0,,0"/>
-  <tile id="14" terrain=",,0,"/>
-  <tile id="15" terrain=",,,0"/>
-  <tile id="17" terrain=",,0,0"/>
+  <tile id="1" terrain=",,0,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="6" terrain=",,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="7" terrain=",,0,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="8" terrain=",0,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="9" terrain="0,0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="10" terrain="0,,0,">
+   <objectgroup draworder="index">
+    <object id="4" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="14" terrain=",0,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="15" terrain="0,,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="17" terrain="0,0,,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="20" terrain=",0,0,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="21" terrain="0,,0,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="28" terrain="0,0,,0">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
+  <tile id="29" terrain="0,0,0,">
+   <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="16" height="16"/>
+   </objectgroup>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="20" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,2,2,2,2,2,21,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,7,2,2,2,2,8,0,
+0,0,0,0,0,7,2,2,2,2,2,2,2,21,10,10,10,10,11,0,
+0,0,0,0,0,15,18,18,18,18,18,18,18,18,18,18,18,18,16,0,
+7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+21,22,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+10,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+10,10,22,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+10,10,10,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+10,10,10,22,2,8,0,0,0,7,2,2,2,2,8,0,0,0,0,0,
+18,18,18,18,18,16,0,0,0,15,18,18,18,18,16,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,2,8,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,11,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,2,21,10,11,
+0,0,0,0,0,0,0,0,0,0,7,2,8,0,0,9,10,10,10,22,
+0,0,0,0,0,0,0,0,0,0,9,10,22,2,2,21,10,10,10,10,
+7,2,2,2,2,2,2,2,2,2,21,10,10,10,10,10,10,10,10,30,
+9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,11,
+15,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,16
 </data>
  </layer>
 </map>
