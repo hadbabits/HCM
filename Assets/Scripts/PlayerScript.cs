@@ -75,6 +75,8 @@ public class PlayerScript : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Ground"))
 			groundContact = true;
+		if (other.gameObject.CompareTag ("Spikes"))
+			Destroy (this.gameObject); 
 			
 
 	}
