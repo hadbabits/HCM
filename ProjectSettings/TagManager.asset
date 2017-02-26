@@ -7,7 +7,7 @@ TagManager:
   - Ground
   - Projectile
   - Enemy
-  - Spikes
+  - Hazard
   layers:
   - Default
   - TransparentFX

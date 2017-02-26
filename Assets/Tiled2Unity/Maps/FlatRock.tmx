@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="4">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="16" tileheight="16" nextobjectid="10">
  <tileset firstgid="1" name="RockTexture" tilewidth="16" tileheight="16" tilecount="40" columns="8">
   <image source="../Textures/RockTexture.png" width="128" height="80"/>
   <terraintypes>
@@ -74,6 +74,9 @@
  <tileset firstgid="41" name="Spikes" tilewidth="16" tileheight="16" tilecount="1" columns="1">
   <image source="../Textures/Spikes.png" width="16" height="16"/>
  </tileset>
+ <tileset firstgid="42" name="ObstaclesAndStuff" tilewidth="16" tileheight="16" tilecount="16" columns="4">
+  <image source="../Textures/ObstaclesAndStuff.png" width="64" height="64"/>
+ </tileset>
  <layer name="Tile Layer 1" width="40" height="40">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -111,14 +114,14 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,2,2,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,10,
 0,0,0,0,0,0,0,0,0,0,7,2,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,2,21,10,10,
-0,0,0,0,0,0,0,0,7,2,21,10,11,0,0,0,0,0,0,7,2,8,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,10,10,10,
-0,0,0,0,0,0,0,0,9,10,10,30,16,41,41,41,41,41,41,9,10,11,0,0,0,0,0,7,2,2,2,2,2,2,2,21,10,10,10,10,
+0,0,0,0,0,0,0,0,7,2,21,10,11,50,51,50,51,50,51,7,2,8,0,0,0,0,0,0,0,0,0,0,0,0,0,9,10,10,10,10,
+0,0,0,0,0,0,0,0,9,10,10,30,16,54,55,54,55,54,55,9,10,11,0,0,0,0,0,7,2,2,2,2,2,2,2,21,10,10,10,10,
 2,2,2,2,2,2,2,2,21,10,10,22,2,2,2,2,2,2,2,21,10,22,2,2,2,2,2,21,10,10,10,10,10,10,10,10,10,10,10,10,
 10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,
 18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18
 </data>
  </layer>
- <objectgroup name="Spikes">
-  <object id="3" name="Spike trap" x="208" y="576" width="96" height="16"/>
+ <objectgroup name="Lava">
+  <object id="9" x="208" y="560" width="96" height="32" visible="0"/>
  </objectgroup>
 </map>
