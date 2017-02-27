@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour {
 
 	public float speed;
 	public float jump;
+	public float jumpCool; //Jump cooldown to prevent super jump
+	public float airDrag; //Slows descent to make jump more realistic
 	public float flipped; //is sprite flipped (public for other script access)
 
 	private Vector2 movement;
@@ -33,15 +35,14 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetKey ("left") || Input.GetKey (KeyCode.A)) {
-			flipped = -1;
-			tf.localScale = new Vector3 (-60, tf.localScale.y, tf.localScale.z);
-		}
-		if (Input.GetKey ("right") || Input.GetKey (KeyCode.D)) {
-			flipped = 1;
-			tf.localScale = new Vector3 (60, tf.localScale.y, tf.localScale.z);
-		}
 
+		if (Input.GetKeyDown (KeyCode.Space) && groundContact) {
+			if (Time.time > initJumpT + jumpCool) {
+				initJumpT = Time.time;
+				groundContact = false;
+				rb.AddForce (Vector2.up * (jump * 100), ForceMode2D.Force); 
+			}		
+		}
 
 	}
 
@@ -54,21 +55,22 @@ public class PlayerScript : MonoBehaviour {
 
 		movement = new Vector2 (
 			speed * inputX,
-			rb.velocity.y);
+			rb.velocity.y * airDrag);
 
-		if (rb == null)
-			rb = GetComponent<Rigidbody2D> ();
 
 		rb.velocity = movement;
 
-		if (Input.GetKeyDown (KeyCode.Space) && groundContact) {
-			if (Time.time > initJumpT + 0.5f) {
-				initJumpT = Time.time;
-				groundContact = false;
-				rb.AddForce (Vector2.up * (jump * 100), ForceMode2D.Force); 
-			}		
-		}
+
 			
+			
+		if (Input.GetKey ("left") || Input.GetKey (KeyCode.A)) {
+			flipped = -1;
+			tf.localScale = new Vector3 (-60, tf.localScale.y, tf.localScale.z);
+		}
+		if (Input.GetKey ("right") || Input.GetKey (KeyCode.D)) {
+			flipped = 1;
+			tf.localScale = new Vector3 (60, tf.localScale.y, tf.localScale.z);
+		}
 	}
 
 	void OnTriggerStay2D (Collider2D other)
