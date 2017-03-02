@@ -176,7 +176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1697489123796922, guid: dae19c39c72cb42dd8a1e43105309881, type: 2}
       propertyPath: m_TagString
-      value: Ground
+      value: Hazard
       objectReference: {fileID: 0}
     - target: {fileID: 60273396277731004, guid: dae19c39c72cb42dd8a1e43105309881,
         type: 2}
@@ -202,6 +202,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 28.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413874698594098, guid: dae19c39c72cb42dd8a1e43105309881, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dae19c39c72cb42dd8a1e43105309881, type: 2}
@@ -374,7 +386,8 @@ MonoBehaviour:
   xMax: 300
   yMin: 0
   yMax: 300
-  playerXDisplace: 30
+  playerXDisplace: 0
+  playerYDisplace: 20
 --- !u!1 &1087557954
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 75
-  jump: 800
+  jump: 950
   jumpCool: 0.25
   airDrag: 0.99
   flipped: 0
@@ -680,7 +693,7 @@ Rigidbody2D:
   m_Mass: 12
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 15
+  m_GravityScale: 20
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
