@@ -14,6 +14,7 @@ public class CameraScript : MonoBehaviour {
 	public float xMin, xMax, yMin, yMax;
 
 	public float playerXDisplace; //how much elbow room should camera give player?
+	public float playerYDisplace; //Same^
 
 
 	void Start () {
@@ -32,7 +33,7 @@ public class CameraScript : MonoBehaviour {
 	void LateUpdate()
 	{
 		//magic, do not touch
-		Vector3 pos = new Vector3 (Mathf.Clamp (playerPos.x + playerXDisplace, xMin, xMax), Mathf.Clamp (playerPos.y +2, yMin, yMax), -10f);
+		Vector3 pos = new Vector3 (Mathf.Clamp (playerPos.x + playerXDisplace, xMin, xMax), Mathf.Clamp (playerPos.y + playerYDisplace, yMin, yMax), -10f);
 		tf.position = pos;
 	}
 
