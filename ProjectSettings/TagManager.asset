@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
   - Projectile
   - Enemy
   - Hazard
+  - Ground
   layers:
   - Default
   - TransparentFX
