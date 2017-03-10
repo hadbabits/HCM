@@ -144,7 +144,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4168948506578556, guid: dae19c39c72cb42dd8a1e43105309881, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -135
+      value: -133.6
       objectReference: {fileID: 0}
     - target: {fileID: 4168948506578556, guid: dae19c39c72cb42dd8a1e43105309881, type: 2}
       propertyPath: m_LocalPosition.y
@@ -762,4 +762,4 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.16}
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.02}
+  m_Size: {x: 0.1, y: 0.01}
